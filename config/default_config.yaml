@@ -1,0 +1,51 @@
+experiment_name: "oam_mock_scan"
+mode: "mock"
+
+paths:
+  # Data output root. All run folders are created here.
+  # 想改存储位置就改这里（例如 "D:/oam_runs"）
+  data_root: "data"
+  # Runtime logs root.
+  logs_root: "logs"
+  slm1_mask_dir: "data/mock_masks/slm1"
+  slm2_mask_dir: "data/mock_masks/slm2"
+
+scan:
+  slm2_settle_ms: 300
+  save_format: "png"
+  # Optional debug limits for small-scale scan. null means use all masks.
+  max_slm1_masks: null
+  max_slm2_masks: null
+  # If mask folders are empty, create placeholder mask files for mock scans.
+  auto_create_placeholder_masks: true
+  placeholder_mask_count:
+    slm1: 3
+    slm2: 4
+
+camera:
+  # "mock" 使用模拟相机；"real" 使用 JAI eBUS 真机
+  mode: "mock"
+  # 当前仅支持 "jai"
+  backend: "jai"
+  # 留空=第一台设备；可填 display_id 或 connection_id 指定设备
+  device_id: ""
+  # eBUS Python 模块名，常见是 "eBUS" 或 "ebus"
+  sdk_module: "eBUS"
+  # ROI 尺寸（宽高）
+  # mock 模式: 必填且 > 0
+  # real 模式: 第一阶段可留空（null），由设备当前配置决定
+  width: 512
+  height: 512
+  # ROI 偏移（左上角 OffsetX/OffsetY）
+  offset_x: 0
+  offset_y: 0
+  bit_depth: 8
+  # 常用: Mono8 / Mono12 / Mono16
+  pixel_format: "Mono8"
+  # 曝光时间（微秒），想改曝光就改这里
+  exposure_us: 2000.0
+  # 增益（dB）
+  gain_db: 0.0
+  trigger_mode: "software"
+  frame_timeout_ms: 1000
+  warmup_frames: 0

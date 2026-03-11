@@ -1,0 +1,26 @@
+slm1_monitor_id: "DISPLAY2"
+slm2_monitor_id: "DISPLAY3"
+calibration_time: "2026-03-11T00:00:00+00:00"
+monitor_summary:
+  - monitor_id: "DISPLAY1"
+    resolution: "1920x1080"
+    position:
+      x: 0
+      y: 0
+    is_primary: true
+    device_name: "\\\\.\\DISPLAY1"
+  - monitor_id: "DISPLAY2"
+    resolution: "1920x1080"
+    position:
+      x: 1920
+      y: 0
+    is_primary: false
+    device_name: "\\\\.\\DISPLAY2"
+  - monitor_id: "DISPLAY3"
+    resolution: "1920x1080"
+    position:
+      x: 3840
+      y: 0
+    is_primary: false
+    device_name: "\\\\.\\DISPLAY3"
+

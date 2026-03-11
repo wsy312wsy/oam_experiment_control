@@ -1,0 +1,42 @@
+experiment_name: "oam_real_jai_small_scan"
+mode: "mock"
+
+paths:
+  # Data output root. 想改存储位置就改这里。
+  data_root: "data"
+  logs_root: "logs"
+  slm1_mask_dir: "data/mock_masks/slm1"
+  slm2_mask_dir: "data/mock_masks/slm2"
+
+scan:
+  slm2_settle_ms: 300
+  save_format: "png"
+  max_slm1_masks: 1
+  max_slm2_masks: 2
+  auto_create_placeholder_masks: true
+  placeholder_mask_count:
+    slm1: 3
+    slm2: 4
+
+camera:
+  # real: 使用 JAI 真机
+  mode: "real"
+  backend: "jai"
+  # 留空=第一台设备；也可以写 display_id/connection_id
+  device_id: ""
+  # 按本机安装设置为 eBUS 或 ebus
+  sdk_module: "eBUS"
+  # ROI 尺寸：real 模式第一阶段可留空（null），由设备端当前值决定
+  width: null
+  height: null
+  # ROI 偏移
+  offset_x: 0
+  offset_y: 0
+  bit_depth: 8
+  pixel_format: "Mono8"
+  # 曝光时间（us）
+  exposure_us: 2000.0
+  gain_db: 0.0
+  trigger_mode: "software"
+  frame_timeout_ms: 1000
+  warmup_frames: 0
