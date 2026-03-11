@@ -1,0 +1,41 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.venv/
+venv/
+env/
+
+.vscode/
+.idea/
+
+data/*
+!data/.gitkeep
+
+logs/*
+!logs/.gitkeep
+
+# local SDK folders
+ZKWX_python_VS2015_x64/
+holoeye/
+
+# common binary / build files
+*.dll
+*.lib
+*.exp
+*.obj
+*.pdb
+*.exe
+
+# image/data outputs
+*.npy
+*.mat
+*.tif
+*.tiff
+*.png
+*.jpg
+*.bmp
+
+Thumbs.db
+.DS_Store
